@@ -1,0 +1,49 @@
+What is audio in general (in air, not water or other materials):
+
+- Audio is composed of sound pressure waves
+- They cause compression and rarefaction of the air
+- These waves propagate outwards from the point of source
+- Waves can interfere with each other causing peaks and troughs
+- Waves can be absorbed and reflected by materials
+
+How is audio represented electrically:
+
+- A microphone and pre-amplifier converts the sound pressure waves into an electrical signal
+- Typically this signal has both a positive and negative voltage (like AC voltages)
+- Magnetic tapes store these differences as they appear, hence the term analogue
+- Saturation occurs when the input signal's strength is equal to the limits of the system (any more increases in voltage cannot be accurately be represented)
+- Clipping occurs when the input signal is higher than can be represented by the system, so the signal becomes clipped (or capped at the extremities)
+
+How is audio represented digitally:
+
+- Audio must first be sampled using an ADC (analog to digital convertor)
+- Sampling comprises of electrically measuring an audio signal periodically
+- This period is called the sample rate and it determines the highest frequency that can be represented (nyquist limit)
+- The nyquist limit is the sample rate / 2 (the closer to get to the limit, the more poorly represented the signal becomes)
+- The bitrange determines the noise floor, (-96dB for 16 bit vs -48dB for 8 bit)
+- A single 16 bit sample of audio can be a (signed) value between -32768 to 32767 (this can represent both the negative and positive swing of the analog signal)
+- There are only 8 Bits allowed per byte (in terms of computer storage) so a 16 bit sample must be represented by at least 2 bytes
+- The order in which these bytes are stored are referred to as their endian type (big or small)
+- Stereo samples require a separate sample for each channel, one for left and another for right
+
+What different ways are used to store digital audio:
+
+- PCM (pulse code modulated) is the most common uncompressed way of storing audio digitally
+- Many compression exist to reduce the amount of data used, some are lossless, some are lossy
+- WAV files are uncompressed and can be mono or stereo (interleaved samples)
+- MP3 files are compressed, lossy and employ psychoacoustics to achieve very high data compression rates
+- Even the lowest bit range (1 bit) can be useful depending on their usage, typically gift cards that play audio that is stored as 1 bit
+
+How to become more familiar with audio in the digital realm:
+
+- Do do and do more! Download a program such as audacity and create different audio files using different sample rates and bit ranges
+- Create sine / triangular / square and sawtooth tones and hear the differences
+- Learn to hear the difference between types such as an 8 bit 10KHz file and a 16 bit 44.1KHz file (CD quality)
+- Experiment with high-pass / low-pass / band-pass filters and hear the differences
+- Push signals beyond their saturation limit to understand how clipping affects the audio signal
+- Apply envelopes to signals if your software has this capability
+- There is a difference between inharmonic and harmonic distortion, experiment with both
+- Use a spectrogram (FFT) to see these and other signals to become familiar with them
+- Use both linear and logarithmic plots to see the differences
+- Downsample and upsample signals and hear how this affects the audio
+- Use different dithering methods (when converting bit ranges) and hear the differences
